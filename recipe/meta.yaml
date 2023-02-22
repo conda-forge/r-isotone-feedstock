@@ -1,4 +1,4 @@
-{% set version = '1.1-0' %}
+{% set version = "1.1-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/isotone_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/isotone/isotone_{{ version }}.tar.gz
-  sha256: 765b93bbdd25fe67975436f9f5c04aa86a19f3858a612b38b17ec0a22a03932a
+  sha256: f669059ddbbc2a29c680e03dbd0cbee8f01a724aec7f9d09dfd90fa6ba63ff4e
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -38,13 +38,10 @@ test:
 about:
   home: http://r-forge.r-project.org/projects/psychor/
   license: GPL-2.0-only
-  summary: 'Contains two main functions: one for solving general isotone regression problems
-    using the pool-adjacent-violators algorithm (PAVA); another one provides a framework
-    for active set methods for isotone optimization problems with arbitrary order restrictions.
-    Various types of loss functions are prespecified.'
+  summary: 'Contains two main functions: one for solving general isotone regression problems using the pool-adjacent-violators algorithm (PAVA); another one provides a framework for active set methods for isotone optimization problems with arbitrary order restrictions. Various types of loss functions are prespecified.'
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
