@@ -1,6 +1,5 @@
 {% set version = "1.1-1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-isotone
@@ -13,8 +12,7 @@ source:
   sha256: f669059ddbbc2a29c680e03dbd0cbee8f01a724aec7f9d09dfd90fa6ba63ff4e
 
 build:
-  merge_build_host: true  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
